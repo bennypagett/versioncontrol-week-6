@@ -15,9 +15,40 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+```{r readr}
+library(readr) 
+df <- read_csv("data/2017_super-rugby_try-source-data.csv") ## load dataframe - Rugby analysis
+View(df)
 ```
+
+
+```{r df summary, include=TRUE}
+summary(df) ##summary of dataframe
+```
+
+```{r initial exploration include=TRUE}
+head(df) ##exploratory analysis of data - head, tail and structure
+tail(df)
+str(df)
+sum(is.na(df)) # count the missing values
+head(which(is.na(df), arr.ind = TRUE)) # find where the missing values are (showing only first 6 rows)
+```
+## Missing values as 0's
+
+## Need to convert 0's to NA's
+
+```{r na conversion, include=TRUE}
+df[df == 0] <- NA ##converts all 0's to NA values. i.e. implicit to explicit
+sum(is.na(df)) # count the missing values and show there location
+head(which(is.na(df), arr.ind = TRUE))
+```
+
+```{r exploratory analysis, include=TRUE}
+head(df)
+tail(df)
+summarise(df)
+```
+
 
 ## Including Plots
 
