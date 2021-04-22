@@ -1,0 +1,1 @@
+{"frames":[{"func":"mutate(brumbies_try_time = attacking_team == \"Brumbies\")","file":"","line_number":0,"end_line_number":0,"character_number":0,"end_character_number":0}],"message":"Error in mutate(brumbies_try_time = attacking_team == \"Brumbies\") : \n  object 'attacking_team' not found\n"}

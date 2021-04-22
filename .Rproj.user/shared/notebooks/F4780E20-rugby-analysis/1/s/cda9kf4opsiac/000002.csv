@@ -1,0 +1,5 @@
+"0","  brumbies_try_time %>%"
+"0","    group_by(try_source) %>%"
+"0","    ggplot() +"
+"0","    geom_bar(mapping = aes(x = try_source, fill = try_source), colour = ""black"","
+"0","             stat = ""count"")"

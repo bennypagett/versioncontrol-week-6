@@ -1,0 +1,5 @@
+"0","mutate(brumbies_try_time = attacking_team == ""Brumbies"")
+"
+"2","Error in mutate(brumbies_try_time = attacking_team == ""Brumbies"") : 
+  object 'attacking_team' not found
+"

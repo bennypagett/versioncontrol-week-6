@@ -57,7 +57,33 @@ df <-df %>%
   geom_histogram(mapping = aes(x = game_time), fill = "dodgerblue", colour = "black", stat = "count",
                  binwidth = 10)
 
+
+## highest scoring team in super rugby
+```{r attacking team points scored, include=TRUE}
+df %>%
+  ggplot(data = df) +
+    geom_histogram(mapping = aes(x = attacking_team, fill = attacking_team), colour = "black",
+                   stat = "count", binwidth = .5)
 ```
+
+
+``` {r brumbies try scoring analysis, include=TRUE}
+brumbies_try_time <- df %>%
+  filter(attacking_team == "Brumbies")
+  mutate(brumbies_try_time = attacking_team == "Brumbies")
+  
+```  
+  
+  
+```{r try_source analysis, include=TRUE}  
+  brumbies_try_time %>%
+    group_by(try_source) %>%
+    ggplot() +
+    geom_bar(mapping = aes(x = try_source, fill = try_source), colour = "black",
+             stat = "count")
+```
+
+
 ## Including Plots
 
 You can also embed plots, for example:
